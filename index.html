@@ -1,72 +1,172 @@
-<!DOCTYPE html>
+a<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Akshaya K Manoj - Portfolio</title>
-    <!-- Tailwind CSS CDN for a modern, minimalistic look -->
-    <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Font for a clean and professional aesthetic -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6;
-            color: #374151;
-            line-height: 1.6;
+        :root {
+            --background-color: #e0f7fa; /* Light cyan */
+            --surface-color: #ffffff;
+            --text-primary: #004d40; /* Dark teal */
+            --text-secondary: #00796b; /* Medium teal */
+            --shadow-light: rgba(0, 0, 0, 0.08);
+            --shadow-medium: rgba(0, 0, 0, 0.15);
+            --border-color: #b2dfdb; /* Lighter teal */
+            --accent-color: #00bfa5; /* Vibrant green-blue */
+            --header-gradient-start: #00897b; /* Darker teal */
+            --header-gradient-end: #00bfa5; /* Vibrant accent color */
         }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
         .container {
             max-width: 960px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            flex-grow: 1;
+        }
+
+        header {
+            text-align: center;
+            padding: 4rem 1rem 3rem;
+            background: linear-gradient(135deg, var(--header-gradient-start), var(--header-gradient-end));
+            box-shadow: 0 4px 6px -1px var(--shadow-light), 0 2px 4px -1px var(--shadow-light);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--surface-color); /* White text on gradient */
+        }
+
+        header p {
+            font-size: 1.25rem;
+            font-weight: 300;
+            color: var(--surface-color);
+            margin-top: 0.5rem;
+        }
+
+        section {
+            background-color: var(--surface-color);
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px var(--shadow-light), 0 2px 4px -1px var(--shadow-light);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-0.25rem);
+            box-shadow: 0 10px 15px -3px var(--shadow-medium), 0 4px 6px -2px var(--shadow-medium);
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--accent-color); /* Vibrant accent color border */
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.75;
+        }
+
+        footer {
+            background-color: var(--surface-color);
+            padding: 1.5rem;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            margin-top: auto;
+        }
+
+        footer p {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+            header p {
+                font-size: 1rem;
+            }
+            section {
+                padding: 2rem;
+            }
+            h2 {
+                font-size: 1.75rem;
+            }
         }
     </style>
 </head>
-<body class="flex flex-col min-h-screen">
+<body>
 
-    <!-- Header Section -->
-    <header class="bg-white shadow-md py-12 px-4 text-center">
-        <h1 class="text-5xl font-extrabold text-gray-900 mb-2">Akshaya K Manoj</h1>
-        <p class="text-xl font-light text-gray-500">B.Tech Student & Dance Enthusiast</p>
+    <header>
+        <h1>Akshaya K Manoj</h1>
+        <p>B.Tech Student & Dance Enthusiast</p>
     </header>
 
-    <!-- Main Content Container -->
-    <main class="container mx-auto mt-10 p-4 flex-grow">
+    <main class="container">
         
-        <!-- Bio Section -->
-        <section class="mb-10 p-8 bg-white rounded-lg shadow-lg">
-            <h2 class="text-3xl font-bold mb-4">About Me</h2>
-            <p class="text-lg leading-relaxed text-gray-700">
-                Hello! I'm <span class="font-semibold text-gray-900">Akshaya K Manoj</span>, originally hailing from the vibrant cultural capital of Kerala, <span class="font-semibold text-gray-900">Thrissur</span>.
+        <section>
+            <h2>About Me</h2>
+            <p>
+                Hello! I'm <strong>Akshaya K Manoj</strong>, originally hailing from the vibrant cultural capital of Kerala, <strong>Thrissur</strong>.
             </p>
         </section>
 
-        <!-- Education Section -->
-        <section class="mb-10 p-8 bg-white rounded-lg shadow-lg">
-            <h2 class="text-3xl font-bold mb-4">Education</h2>
-            <div class="space-y-4">
-                <div class="p-6 bg-gray-50 rounded-lg">
-                    <h3 class="text-xl font-semibold mb-2">B.Tech (Bachelor of Technology)</h3>
-                    <p class="text-gray-600">
-                        Currently pursuing my degree at <span class="font-medium">Vidya Academy of Science and Technology</span>.
-                    </p>
-                </div>
+        <section>
+            <h2>Education</h2>
+            <div>
+                <h3>B.Tech (Bachelor of Technology)</h3>
+                <p>
+                    Currently pursuing my degree at <strong>Vidya Academy of Science and Technology</strong>.
+                </p>
             </div>
         </section>
         
-        <!-- Passion Section -->
-        <section class="mb-10 p-8 bg-white rounded-lg shadow-lg">
-            <h2 class="text-3xl font-bold mb-4">My Passion</h2>
-            <div class="p-6 bg-gray-50 rounded-lg">
-                <h3 class="text-xl font-semibold mb-2">Dance 🩰</h3>
-                <p class="text-gray-600">
-                    My great passion is <span class="font-medium">dance</span>. It's an essential part of my life, a creative outlet that complements my technical studies.
+        <section>
+            <h2>My Passion</h2>
+            <div>
+                <h3>Dance 🩰</h3>
+                <p>
+                    My great passion is <strong>dance</strong>. It's an essential part of my life, a creative outlet that complements my technical studies.
                 </p>
             </div>
         </section>
         
     </main>
 
-    <!-- Footer Section -->
-    <footer class="bg-white shadow-md mt-auto py-6 text-center text-sm text-gray-500">
+    <footer>
         <p>&copy; 2024 Akshaya K Manoj. Designed with Simplicity.</p>
     </footer>
 
